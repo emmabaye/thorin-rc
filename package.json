@@ -37,6 +37,7 @@
     "connect-route": "^0.1.5",
     "copy-to-clipboard": "^3.0.6",
     "country-data": "^0.0.31",
+    "coveralls": "^3.0.1",
     "create-react-class": "^15.6.0",
     "css-annotation": "^0.6.2",
     "deep-diff": "^0.3.8",
@@ -68,6 +69,7 @@
     "node-loggly-bulk": "^2.0.0",
     "nodemailer-wellknown": "^0.2.3",
     "nouislider-algolia-fork": "^10.0.0",
+    "nyc": "^11.8.0",
     "path-to-regexp": "^1.7.0",
     "paypal-rest-sdk": "^1.7.1",
     "postcss": "^6.0.8",
@@ -144,8 +146,9 @@
     }
   },
   "scripts": {
-    "test": "jest",
-    "docs": "jsdoc . --configure .reaction/jsdoc/jsdoc.json --readme .reaction/jsdoc/templates/static/README.md"
+    "test": "nyc jest",
+    "docs": "jsdoc . --configure .reaction/jsdoc/jsdoc.json --readme .reaction/jsdoc/templates/static/README.md",
+    "coverage": "nyc npm test && nyc report --reporter=lcov | coveralls"
   },
   "babel": {
     "plugins": [
