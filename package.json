@@ -147,7 +147,7 @@
     }
   },
   "scripts": {
-    "test": "nyc jest",
+    "test": "jest",
     "docs": "jsdoc . --configure .reaction/jsdoc/jsdoc.json --readme .reaction/jsdoc/templates/static/README.md",
     "coverage": "nyc npm test && nyc report --reporter=lcov | coveralls"
   },
