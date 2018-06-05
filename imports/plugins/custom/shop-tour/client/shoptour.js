@@ -16,7 +16,9 @@ const shopTour = () => {
     scrollToElement: true,
     steps
   });
-  intro.start();
+  setTimeout(() => {
+    intro.start();
+  }, 1000);
 };
 
 

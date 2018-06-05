@@ -79,6 +79,7 @@
         padding-bottom: 20px;
       }
     }
+
     /* Additional Media Query for tablets */
 
     @media screen and (min-width: 620px) and (max-width: 1024px) {
@@ -104,26 +105,45 @@
       }
     }
 
+    .table-top {
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+    }
+
+    .tb-color {
+      background-color: #f2f2f2;
+    }
+
+    .td-bgcolor {
+      background-color: #F8C291;
+    }
+
+    .btn-bgcolor {
+      background-color: #335B72;
+    }
+
+    .text-color {
+      color: #335B72;
+    }
+
   </style>
 </head>
 
 <body style="margin:0; padding:0;">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="emailwrapto100pc">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="emailwrapto100pc table-top">
     <tr>
       <td align="center" valign="middle">
         <table width="600" border="0" cellspacing="0" cellpadding="0" class="emailwrapto100pc">
           <tr>
             <td valign="top" align="left">
-              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="emailwrapto100pc">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="emailwrapto100pc tb-color">
                 <tr>
-                  <td height="10" align="left" valign="top" style="font-size:1px; line-height:1px;">&nbsp;</td>
-                </tr>
-                <tr>
-                  <td height="4" align="left" valign="top" bgcolor="#1999dd" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                  <td class="td-bgcolor" height="4" align="left" valign="top" bgcolor="#1999dd" style="font-size:1px; line-height:1px;">&nbsp;</td>
                 </tr>
                 <tr>
                   <td align="center" valign="top">
-                    <table width="545" border="0" cellspacing="0" cellpadding="0" class="emailwrapto90pc">
+                    <table width="545" border="0" cellspacing="0" cellpadding="0" class="emailwrapto90pc table-top">
                       <tr>
                         <td valign="top" align="left">
                           <table width="100%" border="0" cellspacing="0" cellpadding="0" class="emailwrapto100pc">
@@ -142,7 +162,7 @@
                               <td height="31" align="left" valign="top" style="font-size:1px; line-height:1px;">&nbsp;</td>
                             </tr>
                             <tr>
-                              <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:22px; font-weight:bold; line-height:22px; color:#1e98d5;">Your order is on its way</td>
+                              <td class="text-color" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:22px; font-weight:bold; line-height:22px;">Your order is on its way</td>
                             </tr>
                             <!-- End Header -->
 
@@ -185,9 +205,9 @@
                                               <td width="33%" align="left" valign="top" style="font-size:14px; line-height:normal; color:#1999dd; font-family:Arial, helvetica;"><a href="{{homepage}}{{orderUrl}}" style="color:#1999dd;">{{order._id}}</a></td>
                                               <td width="33%" align="left" valign="top" style="font-size:14px; line-height:normal; color:#4c4c4d; font-family:Arial, helvetica;">{{orderDate}}</td>
                                               {{#if shipping.tracking}}
-                                                <td width="33%" align="left" valign="top" style="font-size:14px; line-height:normal; color:#4c4c4d; font-family:Arial, helvetica;">{{shipping.carrier}}<br />{{shipping.tracking}}</td>
+                                              <td width="33%" align="left" valign="top" style="font-size:14px; line-height:normal; color:#4c4c4d; font-family:Arial, helvetica;">{{shipping.carrier}}<br />{{shipping.tracking}}</td>
                                               {{else}}
-                                                <td width="33%" align="left" valign="top" style="font-size:14px; line-height:normal; color:#4c4c4d; font-family:Arial, helvetica;">Tracking not available</td>
+                                              <td width="33%" align="left" valign="top" style="font-size:14px; line-height:normal; color:#4c4c4d; font-family:Arial, helvetica;">Tracking not available</td>
                                               {{/if}}
                                             </tr>
                                           </tbody>
@@ -229,10 +249,10 @@
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="emailwrapto100pc">
                                           <tbody>
                                             <tr>
-                                              <td width="33%" align="left" valign="top" style="font-size:10px; line-height:normal; color:#4c4c4d; font-family:Arial, helvetica;">{{shipping.address.address}},<br> {{shipping.address.city}},
-                                                {{shipping.address.region}} {{shipping.address.postal}}</td>
-                                              <td width="33%" align="left" valign="top" style="font-size:10px; line-height:normal; color:#4c4c4d; font-family:Arial, helvetica;">{{billing.address.address}},<br> {{billing.address.city}},
-                                                {{billing.address.region}} {{billing.address.postal}}</td>
+                                              <td width="33%" align="left" valign="top" style="font-size:10px; line-height:normal; color:#4c4c4d; font-family:Arial, helvetica;">{{shipping.address.address}},<br> {{shipping.address.city}}, {{shipping.address.region}}
+                                                {{shipping.address.postal}}</td>
+                                              <td width="33%" align="left" valign="top" style="font-size:10px; line-height:normal; color:#4c4c4d; font-family:Arial, helvetica;">{{billing.address.address}},<br> {{billing.address.city}}, {{billing.address.region}}
+                                                {{billing.address.postal}}</td>
                                               <td width="33%" align="left" valign="top" style="font-size:10px; line-height:normal; color:#4c4c4d; font-family:Arial, helvetica;">{{billing.paymentMethod}}</td>
                                             </tr>
                                             <tr>
@@ -268,10 +288,8 @@
                                                       <td valign="top" align="center" width="30" style="line-height:1px; font-size:1px;">&nbsp;</td>
                                                       <td valign="middle" align="left">
                                                         {{#if variantImage}}
-                                                          <img src="{{variantImage}}"  width="50" height="50" alt="" />
-                                                        {{else}}
-                                                          <img src="{{placeholderImage}}" width="50" height="50" alt="" />
-                                                        {{/if}}
+                                                        <img src="{{variantImage}}" width="50" height="50" alt="" /> {{else}}
+                                                        <img src="{{placeholderImage}}" width="50" height="50" alt="" />                                                        {{/if}}
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -299,7 +317,7 @@
                                     <tr>
                                       <td valign="top" align="left" height="2" style="line-height:1px; font-size:1px; border-top:solid 2px #efefee;">&nbsp;</td>
                                     </tr>
-																		{{/each}}
+                                    {{/each}}
                                     <tr>
                                       <td valign="top" align="right">
                                         <table width="210" border="0" cellspacing="0" cellpadding="0" class="emailwrapto100pc">
@@ -361,7 +379,8 @@
                               <td height="15" align="left" valign="top" style="font-size:1px; line-height:1px;">&nbsp;</td>
                             </tr>
                             <tr>
-                              <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:normal; line-height:17px;">You received this email because you created an order with {{shopName}}. Questions or suggestions? Email us at <a href="mailto:{{contactEmail}}" style="text-decoration:none; color:#1e98d5;">{{contactEmail}}</a></td>
+                              <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:normal; line-height:17px;">You received this email because you created an order with {{shopName}}. Questions or suggestions?
+                                Email us at <a href="mailto:{{contactEmail}}" style="text-decoration:none; color:#1e98d5;">{{contactEmail}}</a></td>
                             </tr>
                             <!-- Begin Social Icons -->
                             {{#if socialLinks.display}}
@@ -377,15 +396,13 @@
                                       <a href="{{socialLinks.twitter.link}}"><img src="{{socialLinks.twitter.icon}}" width="26"
                                             height="26" alt="twt_icon"></a>
                                     </td>
-                                    {{/if}}
-                                    {{#if socialLinks.facebook.display}}
+                                    {{/if}} {{#if socialLinks.facebook.display}}
                                     <td width="10" align="left" valign="top">&nbsp;</td>
                                     <td width="26" align="left" valign="top">
                                       <a href="{{socialLinks.facebook.link}}"><img src="{{socialLinks.facebook.icon}}" width="26"
                                             height="26" alt="fb_icon"></a>
                                     </td>
-                                    {{/if}}
-                                    {{#if socialLinks.googlePlus.display}}
+                                    {{/if}} {{#if socialLinks.googlePlus.display}}
                                     <td width="10" align="left" valign="top">&nbsp;</td>
                                     <td>
                                       <a href="{{socialLinks.googlePlus.link}}"><img src="{{socialLinks.googlePlus.icon}}" width="26"
@@ -406,7 +423,7 @@
                             {{/if}}
                             <!-- End Social Icons -->
                             <tr>
-                              <td height="3" align="left" valign="top" bgcolor="#1f97d4" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                              <td class="td-bgcolor" height="3" align="left" valign="top" bgcolor="#1f97d4" style="font-size:1px; line-height:1px;">&nbsp;</td>
                             </tr>
                             <tr>
                               <td height="18" align="left" valign="top" style="font-size:1px; line-height:1px;">&nbsp;</td>
@@ -437,3 +454,4 @@
   </table>
 
 </body>
+

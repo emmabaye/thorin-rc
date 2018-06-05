@@ -5,11 +5,6 @@ const onboardingSteps = [
     position: "bottom"
   },
   {
-    element: ".dropdown",
-    intro: "Here you can read notifications pertaining to the store",
-    position: "left"
-  },
-  {
     element: ".product-image",
     intro: "Products available in the store are showcased here",
     position: "bottom"
@@ -18,6 +13,11 @@ const onboardingSteps = [
     element: ".search",
     intro: "Search for items around the store here",
     position: "bottom"
+  },
+  {
+    element: ".notify",
+    intro: "Here you can read notifications pertaining to the store",
+    position: "left"
   },
   {
     element: ".languages",

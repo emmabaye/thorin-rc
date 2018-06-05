@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Components } from "@reactioncommerce/reaction-components";
 import { Meteor } from "meteor/meteor";
 import shopTour from "../../../../custom/shop-tour/client/shoptour";
-import autoTour from "../../../../custom/shop-tour/client/autotour";
 
 // TODO: Delete this, and do it the react way - Mike M.
 async function openSearchModalLegacy(props) {
@@ -31,22 +30,14 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.startTour = this.startTour.bind(this);
-    this.startAutoTour = this.startAutoTour.bind(this);
   }
 
   state = {
     navBarVisible: false
   }
 
-  componentDidMount() {
-    (this.props.hasProperPermission ? this.startAutoTour() : null);
-  }
-
   startTour() {
     shopTour();
-  }
-  startAutoTour() {
-    autoTour();
   }
 
   toggleNavbarVisibility = () => {
