@@ -1,7 +1,6 @@
 import { Meteor } from "meteor/meteor";
 import { check } from "meteor/check";
 import { Reviews } from "../../lib/collections";
-import { Products } from "../../../../../../lib/collections";
 
 Meteor.methods({
   "review/create"(rating, review, userEmail, productName) {
@@ -35,9 +34,5 @@ Meteor.methods({
       }
     ]);
     return result[0].averageRate;
-  },
-  "review/product"(productId) {
-    check(productId, String);
-    return Products.findOne({ handle: productId });
   }
 });

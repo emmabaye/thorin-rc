@@ -5,6 +5,7 @@ const productName = "and-shoe";
 const userEmail = "toy";
 const review = "i love the shoe";
 const rating = 5;
+const rating2 = "abc";
 
 describe("productReview", () => {
   it("save ratings and reviews for a product", () => {
@@ -33,10 +34,19 @@ describe("productReview", () => {
     );
   });
 
-  it("should get ratings and review for product", () => {
+  it("average rating should be a number", () => {
     Meteor.call("reviews/average", productName,
       (error, payload) => {
-        expect(payload).to.equal(5);
+        expect(payload).to.equal(typeof "number");
+      }
+    );
+  });
+
+  it("should trow error if rating is not a number", () => {
+    Meteor.call("review/create", rating2, review, userEmail, productName,
+      (error, payload) => {
+        expect(error[0].message).to.equal("Match error: Expected number, got string");
+        expect(payload).to.equal(undefined);
       }
     );
   });

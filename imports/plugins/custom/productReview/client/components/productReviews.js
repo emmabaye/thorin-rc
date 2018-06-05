@@ -119,7 +119,7 @@ class ProductReview extends Component {
            />
            <br/>
            <button
-             className="rui btn btn-primary solid btn-block"
+             className="but"
              type="submit"
            >
     Add Review

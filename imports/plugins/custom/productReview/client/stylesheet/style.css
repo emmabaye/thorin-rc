@@ -38,3 +38,22 @@ h1 {
   min-height: 450px;
 }
 
+
+.but:hover, but:focus, but:active {
+  background-color: white ;
+  text-decoration: none ;
+  color: #335B81;
+  border: 1px solid #335B81;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+
+.but {
+  color:white;
+  text-decoration: none;
+  background-color: #335B81;
+  transition: 0.3s all ease-in;
+  padding: 10px;
+  border: 1px solid #335B81;
+}
