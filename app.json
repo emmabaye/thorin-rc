@@ -9,7 +9,7 @@
     "BUILDPACK_PRELAUNCH_METEOR": {
       "required": true
     },
-    "MONGO_URL": {
+    "MONGODB_URI": {
       "required": true
     },
     "ROOT_URL": {
