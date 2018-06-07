@@ -43,7 +43,7 @@ jobs:
       - run: .circleci/tests.sh
 
       - save_cache:
-          name: Saving Meteor dev_bundle to cache
+          name: Saving Meteors dev_bundle to cache
           key: dev_bundle
           paths:
             - /home/reaction/.meteor/local
