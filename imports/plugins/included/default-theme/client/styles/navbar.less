@@ -11,7 +11,8 @@
 .rui.navbar a,
 .rui.navbar a:hover,
 .rui.navbar a:focus,
-.rui.navbar .dropdown-toggle {
+.rui.navbar .dropdown-toggle
+ .rui.navbar .tour{
   color: @navbar-default-link-color;
   cursor: pointer;
   text-decoration: none;
@@ -273,6 +274,11 @@ html:not(.rtl) .rui.navbar .languages .dropdown-menu {
 }
 
 .rui.navbar .search:hover {
+  background-color: @navbar-default-toggle-icon-bar-bg;
+  border-color: @navbar-default-toggle-border-color;
+}
+
+.rui.navbar .tour:hover {
   background-color: @navbar-default-toggle-icon-bar-bg;
   border-color: @navbar-default-toggle-border-color;
 }
