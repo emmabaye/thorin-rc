@@ -18,35 +18,22 @@ jobs:
       - checkout
 
       # install OS dependencies
-      - restore_cache:
-          name: Restoring Meteor cache
-          key: meteor
+      
 
       - run: .circleci/install.sh
 
-      - save_cache:
-          name: Saving Meteor to cache
-          key: meteor
-          paths:
-            - ~/.meteor
 
       # install app dependencies
 
       - run: meteor npm install
 
       # run tests
-      - restore_cache:
-          name: Restoring Meteor dev_bundle cache
-          key: dev_bundle
+     
 
       # run reaction tests
       - run: .circleci/tests.sh
 
-      - save_cache:
-          name: Saving Meteors dev_bundle to cache
-          key: dev_bundle
-          paths:
-            - /home/reaction/.meteor/local
+     
 
       - run:
           command: .circleci/build.sh
